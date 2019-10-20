@@ -17,11 +17,11 @@ function validateForm() {
     
     // Validate name
     if(name == "") {
-        printError("nameErr", "Please enter your name");
+        printError("nameErr", "*Please enter your name");
     } else {
         var regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(name) === false) {
-            printError("nameErr", "Please enter a valid name");
+            printError("nameErr", "*Please enter a valid name");
         } else {
             printError("nameErr", "");
             nameErr = false;
@@ -30,12 +30,12 @@ function validateForm() {
     
     // Validate email address
     if(email == "") {
-        printError("emailErr", "Please enter your email address");
+        printError("emailErr", "*Please enter your email address");
     } else {
         // Regular expression for basic email validation
         var regex = /^\S+@\S+\.\S+$/;
         if(regex.test(email) === false) {
-            printError("emailErr", "Please enter a valid email address");
+            printError("emailErr", "*Please enter a valid email address");
         } else{
             printError("emailErr", "");
             emailErr = false;
@@ -44,13 +44,13 @@ function validateForm() {
     
     // Validate mobile number
     if(mobile == "") {
-        printError("mobileErr", "Please enter your mobile number");
+        printError("mobileErr", "*Please enter your mobile number");
     } else {
         var regex = /^[1-9]\d{9}$/;
         if(regex.test(mobile) === false) {
-            printError("mobileErr", "Please enter a valid 9 digit mobile number");
+            printError("mobileErr", "*Please enter a valid 9 digit mobile number");
          if(mobile.length < 14 || mobile.length > 14 ){
-            printError("mobileErr", "Please enter a valid 9 digit  mobile number");
+            printError("mobileErr", "*Please enter a valid 9 digit  mobile number");
         }else{
             printError("mobileErr", "");
             mobileErr = false;
@@ -60,13 +60,13 @@ function validateForm() {
 
     // Validate Age
     if(age == "") {
-        printError("ageErr", "Please enter your Age");
+        printError("ageErr", "*Please enter your Age");
     } else {
         var regex = /^[1-9]\d{9}$/;
         if(regex.test(age) === false) {
-            printError("ageErr", "Please enter you Age");
+            printError("ageErr", "*Please enter you Age");
          if(age <5 || age > 100 ){
-            printError("ageErr", "Please enter a valid Age");
+            printError("ageErr", "*Please enter a valid Age");
         }else{
             printError("ageErr", "");
             ageErr = false;
@@ -74,9 +74,9 @@ function validateForm() {
     }
     //Validate Message
     if(msg == "") {
-        printError("msgErr", "Please Leave a Message");
+        printError("msgErr", "*Please Leave a Message");
     } else  if (msg.length > 300 ){
-        printError("msgErr", "The message is more than 300 characters");
+        printError("msgErr", "*The message is more than 300 characters");
     }else{
             printError("msgErr", "");
             msgErr = false;
